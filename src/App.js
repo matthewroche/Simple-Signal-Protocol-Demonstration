@@ -79,7 +79,7 @@ class App extends Component {
     bob.message = {}
     bob.message.sessionCipher = new libsignal.SessionCipher(bob.store, alice.address);
     bob.message.plainText = util.toString(await bob.message.sessionCipher.decryptPreKeyWhisperMessage(alice.message.cipherText.body, 'binary'));
-    
+
     console.log(bob.message.plainText);
 
     //
@@ -95,7 +95,7 @@ class App extends Component {
     console.log(alice.message.plainText)
 
   }
-  
+
   render() {
     return (
       <div className="App">
@@ -103,6 +103,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">A demonstration of the signal protocol</h1>
         </header>
+        <div className="Content-holder">
+          <p style={{'margin-left': 'auto', 'margin-right': 'auto', 'margin-top': '10%'}}>Please check your browser's web console to see the decrypted outputs</p>
+        </div>
       </div>
     );
   }
